@@ -167,14 +167,14 @@ define account(
       path    => $home_dir_real,
       owner   => $dir_owner,
       group   => $dir_group,
-      mode    => 0750;
+      mode    => '0750';
 
     "${title}_sshdir":
       ensure  => $dir_ensure,
       path    => "${home_dir_real}/.ssh",
       owner   => $dir_owner,
       group   => $dir_group,
-      mode    => 0700;
+      mode    => '0700';
   }
 
   if $ssh_key != undef {
